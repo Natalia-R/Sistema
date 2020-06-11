@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroUsuarioController">
+   <children>
+      <Label layoutX="412.0" layoutY="87.0" prefHeight="20.0" prefWidth="214.0" text="CADASTRO DE USUÁRIO">
+         <font>
+            <Font name="Times New Roman Bold" size="17.0" />
+         </font></Label>
+      <Label layoutX="269.0" layoutY="138.0" prefHeight="34.0" prefWidth="108.0" text="NumRegistro:">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="323.0" layoutY="188.0" prefHeight="34.0" prefWidth="50.0" text="Login:">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="323.0" layoutY="241.0" prefHeight="34.0" prefWidth="50.0" text="Senha:">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font></Label>
+      <Label layoutX="249.0" layoutY="283.0" prefHeight="34.0" prefWidth="132.0" text="Confirmar senha:">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="buttonVoltar" layoutY="1.0" mnemonicParsing="false" onAction="#onbuttonVoltarAction" text="&lt;- Voltar">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Button>
+      <Button fx:id="buttonCadastrar" layoutX="473.0" layoutY="365.0" mnemonicParsing="false" onAction="#onbuttonCadastrarAction" prefHeight="26.0" prefWidth="90.0" text="Cadastrar">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font></Button>
+      <TextField fx:id="textnumRegistro" layoutX="386.0" layoutY="142.0" prefHeight="26.0" prefWidth="265.0" promptText="Registro do Professor" />
+      <TextField fx:id="textLogin" layoutX="386.0" layoutY="192.0" prefHeight="26.0" prefWidth="266.0" />
+      <PasswordField fx:id="textSenha" layoutX="386.0" layoutY="245.0" prefHeight="26.0" prefWidth="266.0" />
+      <PasswordField fx:id="textConfirmarSenha" layoutX="386.0" layoutY="287.0" prefHeight="26.0" prefWidth="266.0" />
+      <Label fx:id="labelErro" layoutX="305.0" layoutY="334.0" prefHeight="18.0" prefWidth="458.0" textFill="#ea0b0b" />
+      <Label fx:id="labelErroSenha" layoutX="670.0" layoutY="274.0" prefHeight="18.0" prefWidth="155.0" textFill="#e20f0f" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastrodePreferenciasController">
+   <children>
+      <ToolBar prefHeight="38.0" prefWidth="960.0">
+         <items>
+            <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#onButtonVoltar" prefHeight="26.0" prefWidth="132.0" text="Voltar" />
+         </items></ToolBar>
+      <ToolBar layoutX="-1.0" layoutY="72.0" prefHeight="36.0" prefWidth="960.0">
+         <items>
+            <AnchorPane prefHeight="25.0" prefWidth="816.0">
+               <children>
+                  <Label layoutX="321.0" layoutY="3.0" text="CADASTRO DE PREFERÊNCIAS" AnchorPane.leftAnchor="321.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <MenuButton fx:id="menuButtonTurma1" layoutX="384.0" layoutY="154.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <Button fx:id="Cadastrar" layoutX="287.0" layoutY="482.0" mnemonicParsing="false" onAction="#onButtonCadastrar" text="Cadastrar" />
+      <MenuButton fx:id="menuButtonTurma2" layoutX="383.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <Label layoutX="303.0" layoutY="157.0" prefHeight="16.0" prefWidth="66.0" text="Turma 1:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="200.0" prefHeight="16.0" prefWidth="66.0" text="Turma 2:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonHelp" layoutX="457.0" layoutY="514.0" mnemonicParsing="false" onAction="#onButtonHelp" text="HELP" />
+      <Label layoutX="340.0" layoutY="122.0" prefHeight="18.0" prefWidth="320.0" text="DISCIPLINAS QUE DESEJA LECIONAR">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="243.0" prefHeight="19.0" prefWidth="66.0" text="Turma 3:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="menuButtonTurma3" layoutX="383.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <MenuButton fx:id="menuButtonDescarte1" layoutX="384.0" layoutY="334.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <MenuButton fx:id="menuButtonDescarte2" layoutX="384.0" layoutY="377.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <Label layoutX="289.0" layoutY="337.0" prefHeight="19.0" prefWidth="82.0" text="Descarte 1:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="289.0" layoutY="380.0" prefHeight="19.0" prefWidth="82.0" text="Descarte 2:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="290.0" prefHeight="19.0" prefWidth="354.0" text="DISCIPLINAS QUE NÃO DESEJA LECIONAR">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="289.0" layoutY="423.0" prefHeight="19.0" prefWidth="82.0" text="Descarte 3:" AnchorPane.rightAnchor="590.0">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="menuButtonDescarte3" layoutX="383.0" layoutY="420.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="252.0" AnchorPane.rightAnchor="324.0" />
+      <Label fx:id="labelErro" layoutX="364.0" layoutY="463.0" prefHeight="38.0" prefWidth="354.0" />
+   </children>
+</AnchorPane>

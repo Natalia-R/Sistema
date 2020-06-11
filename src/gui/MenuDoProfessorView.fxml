@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MenuProfessorController">
+   <children>
+      <ToolBar prefHeight="36.0" prefWidth="960.0">
+        <items>
+          <Button fx:id="buttonGerenciarPreferencias" mnemonicParsing="false" onAction="#onbuttonGerenciarPreferencias" text="Minhas Preferencias" />
+            <Button fx:id="buttonEncerrarSecao" mnemonicParsing="false" onAction="#onbuttonEncerar" text="Encerrar Seção " />
+        </items>
+      </ToolBar>
+      <Label layoutX="187.0" layoutY="73.0" text="SEJA BEM VINDO! VOCÊ ESTÁ LOGADO COMO PROFESSOR">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="169.0" fitWidth="302.0" layoutX="329.0" layoutY="129.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/img1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

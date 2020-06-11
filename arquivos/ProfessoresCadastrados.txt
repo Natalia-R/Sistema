@@ -1,0 +1,5 @@
+010,Professor1,20,20,1,1,true
+020,Professor2,20,20,1,1,true
+030,Professor3,20,20,1,1,false
+040,Professor4,20,20,1,1,true
+050,Professor5,20,20,1,1,false

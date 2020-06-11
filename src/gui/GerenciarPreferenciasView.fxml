@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GerenciarPreferenciasController">
+   <children>
+      <ToolBar prefHeight="38.0" prefWidth="960.0">
+        <items>
+          <Button fx:id="buttonCadastrarPreferencias" mnemonicParsing="false" onAction="#onbuttonCadastroPreferencias" prefHeight="26.0" prefWidth="158.0" text="+ Cadastrar preferencias" />
+            <Button fx:id="buttonMenuPrincipal" mnemonicParsing="false" onAction="#onbuttonMenuPrincipal" prefHeight="26.0" prefWidth="115.0" text="Menu Principal" />
+        </items>
+      </ToolBar>
+      <Label layoutX="365.0" layoutY="75.0" prefHeight="20.0" prefWidth="208.0" text="MINHAS PREFERENCIAS">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewPreferencia" layoutX="4.0" layoutY="120.0" prefHeight="347.0" prefWidth="949.0">
+        <columns>
+          <TableColumn fx:id="columnRegistro" prefWidth="88.7999849319458" text="REGISTRO" />
+          <TableColumn fx:id="columnNomeProfessor" prefWidth="95.20001220703125" text="PROFESSOR" />
+            <TableColumn fx:id="columnTurma1" prefWidth="101.5999755859375" text="TURMA1" />
+            <TableColumn fx:id="columnTurma2" prefWidth="83.20001220703125" text="TURMA2" />
+            <TableColumn fx:id="columnTurma3" minWidth="0.0" prefWidth="106.4000244140625" text="TURMA3" />
+            <TableColumn fx:id="columnDescarte1" prefWidth="102.4000244140625" text="DESCARTE1" />
+            <TableColumn fx:id="columnDescarte2" prefWidth="114.39996337890625" text="DESCARTE2" />
+            <TableColumn fx:id="columnDescarte3" prefWidth="134.39990234375" text="DESCARTE3" />
+            <TableColumn fx:id="columnAcoes" prefWidth="120.800048828125" text="AÇÕES" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

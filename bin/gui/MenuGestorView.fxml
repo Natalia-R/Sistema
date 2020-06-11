@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.menuGestorController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="860.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+           <Tab>
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="182.0" layoutY="51.0" prefHeight="38.0" prefWidth="440.0" text="SEJA BEM VINDO VOCE ESTA LOGADO COMO GESTOR" textAlignment="CENTER">
+                           <font>
+                              <Font name="Times New Roman Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="286.0" layoutX="259.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/img1.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tabRealizarAlocacoes" closable="false" onSelectionChanged="#onbuttonTabRealizarAlocacoes" text="Realizar Alocações">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="377.0" prefWidth="747.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="tabAlocacoesRealizadas" onSelectionChanged="#onbuttonTabAlocacoesRealizadas" text="Alocações Realizadas">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#onbuttonTabProfessores" text="Professores">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="Disciplina" onSelectionChanged="#onbuttonTabDisciplina" text="Disciplinas">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#onbuttonTabCurso" text="Cursos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#onbuttonTabHorarios" text="Horários">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#onbuttonTabTurmas" text="Turmas">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab onSelectionChanged="#onbuttonTabPreferencias" text="Preferencias">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="tabEncerrarSecao" onSelectionChanged="#onbuttonTabEncerar" text="Encerrar sessão">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroProfessorController">
+   <children>
+      <ToolBar prefHeight="37.0" prefWidth="860.0">
+        <items>
+          <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#onButtonVoltar" prefHeight="26.0" prefWidth="115.0" text="&lt;- Voltar" />
+        </items>
+      </ToolBar>
+      <ToolBar layoutY="58.0" prefHeight="36.0" prefWidth="860.0">
+         <items>
+            <AnchorPane prefHeight="25.0" prefWidth="816.0">
+               <children>
+                  <Label layoutX="276.0" layoutY="2.0" text="CADASTRO DE PROFESSOR">
+                     <font>
+                        <Font name="Times New Roman Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <Label layoutX="209.0" layoutY="142.0" prefHeight="20.0" prefWidth="71.0" text="Registro:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Label>
+      <TextField fx:id="textRegistro" layoutX="339.0" layoutY="139.0" prefHeight="26.0" prefWidth="241.0" />
+      <Label layoutX="209.0" layoutY="176.0" prefHeight="20.0" prefWidth="62.0" text="Nome:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textNome" layoutX="339.0" layoutY="173.0" prefHeight="26.0" prefWidth="241.0" />
+      <Label layoutX="211.0" layoutY="212.0" prefHeight="20.0" prefWidth="128.0" text="CargaMinAnual:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textCargaMinA" layoutX="341.0" layoutY="209.0" prefHeight="26.0" prefWidth="241.0" text="0" />
+      <TextField fx:id="textCargaMaxA" layoutX="339.0" layoutY="249.0" prefHeight="26.0" prefWidth="241.0" text="0" />
+      <Label layoutX="211.0" layoutY="252.0" prefHeight="20.0" prefWidth="128.0" text="CargaMáxAnual:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="211.0" layoutY="290.0" prefHeight="20.0" prefWidth="115.0" text="CargoAdm:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="349.0" layoutY="289.0" mnemonicParsing="false" text="Sim">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="cargoAdm" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="413.0" layoutY="289.0" mnemonicParsing="false" selected="true" text="Não" toggleGroup="$cargoAdm">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="buttonCadastrar" layoutX="383.0" layoutY="338.0" mnemonicParsing="false" onAction="#onButtonCadastrar" prefHeight="26.0" prefWidth="88.0" text="Cadastrar">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelErro" layoutX="294.0" layoutY="377.0" prefHeight="36.0" prefWidth="326.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

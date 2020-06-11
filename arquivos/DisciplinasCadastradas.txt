@@ -1,0 +1,8 @@
+001,Matematica Discreta I
+002,Banco de Dados I
+003,Compiladores
+004,Redes de Computadores
+005,Algoritmos em Grafos
+006,Construcao de Software
+007,Analise e Projeto de Software
+008,Gerenciamento de Projetos de Software

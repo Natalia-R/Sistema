@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Alocacoes4Controller">
+   <children>
+      <ToolBar prefHeight="37.0" prefWidth="860.0">
+        <items>
+          <Button fx:id="buttonMenuPrincipal" mnemonicParsing="false" onAction="#onbuttonButtonMenu" prefHeight="26.0" prefWidth="115.0" text="Menu Principal" />
+        </items>
+      </ToolBar>
+      <Button fx:id="buttonFixarProfessoresTurmas" layoutX="341.0" layoutY="209.0" mnemonicParsing="false" onAction="#onButtonFixarTurmasProfessores" prefHeight="26.0" prefWidth="168.0" text="+ Fixar Professor e Turma" />
+      <ToolBar layoutX="-1.0" layoutY="282.0" prefHeight="36.0" prefWidth="860.0">
+         <items>
+            <AnchorPane prefHeight="25.0" prefWidth="800.0">
+               <children>
+                  <Label layoutX="145.0" layoutY="2.0" prefHeight="22.0" prefWidth="275.0" text="PROFESSORES E TURMAS FIXOS" AnchorPane.rightAnchor="260.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <Label layoutX="245.0" layoutY="45.0" prefHeight="20.0" prefWidth="361.0" text="ALOCAÇÃO DE PROFESSORES E TURMAS">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewFixos" layoutX="37.0" layoutY="330.0" prefHeight="166.0" prefWidth="765.0">
+        <columns>
+          <TableColumn fx:id="columnRegistro" prefWidth="131.20004272460938" text="REGISTRO" />
+          <TableColumn fx:id="columnNome" prefWidth="112.79997253417969" text="NOME" />
+            <TableColumn fx:id="columnCodigoTurma" prefWidth="133.60003662109375" text="COD_TURMA" />
+            <TableColumn fx:id="columnDisciplina" prefWidth="135.20001220703125" text="DISCIPLINA" />
+            <TableColumn fx:id="columnAno" prefWidth="119.20001220703125" text="ANO" />
+            <TableColumn fx:id="columnAcoes" prefWidth="129.60000000000002" text="AÇÕES" />
+        </columns>
+      </TableView>
+      <ToolBar layoutX="-1.0" layoutY="72.0" prefHeight="36.0" prefWidth="860.0">
+         <items>
+            <AnchorPane prefHeight="25.0" prefWidth="816.0">
+               <children>
+                  <Label layoutX="378.0" layoutY="5.0" text="Passo 4 - Professores com turmas fixas" AnchorPane.leftAnchor="250.0">
+                     <font>
+                        <Font name="Times New Roman Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <Button fx:id="buttonLimparLista" layoutX="361.0" layoutY="523.0" mnemonicParsing="false" onAction="#onButtonLimparLista" prefHeight="26.0" prefWidth="115.0" text="x Limpar Lista" />
+      <Button fx:id="passo5" layoutX="420.0" layoutY="561.0" mnemonicParsing="false" onAction="#onbuttonButtonPasso5" text="&gt;&gt; Passo 5" />
+      <MenuButton fx:id="menuButtonProfessor" layoutX="313.0" layoutY="126.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="226.0" />
+      <Button fx:id="passo3" layoutX="323.0" layoutY="561.0" mnemonicParsing="false" onAction="#onbuttonButtonPasso3" text="&lt;&lt; Passo  3" />
+      <MenuButton fx:id="menuButtonTurma" layoutX="312.0" layoutY="162.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="226.0" />
+      <Label layoutX="238.0" layoutY="131.0" prefHeight="16.0" prefWidth="66.0" text="Professor:">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="238.0" layoutY="167.0" prefHeight="16.0" prefWidth="66.0" text="Turma:">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonHelp" layoutX="392.0" layoutY="250.0" mnemonicParsing="false" onAction="#onButtonHelp" text="HELP" />
+   </children>
+</AnchorPane>
