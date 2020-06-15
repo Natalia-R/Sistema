@@ -75,7 +75,7 @@ public class AtualizarPreferenciaController implements Initializable{
           "DESCARTES\n"+
           "As disciplinas descarte são aquelas que o professor não tem segurança para lecionar, \n"+
           "ou simplesmente não queira. O sistema criará restrições no modelo para que o professor não pegue tais disciplinas.\n"+
-          "*OBS: Uma disciplina descarte só será entregue ao respectivo professor em casos extremos.\n");
+          "*OBS: Uma disciplina descarte só será entregue ao repectivo professor em casos extremos.\n");
          dialogoInfo.showAndWait();
 	}
 
