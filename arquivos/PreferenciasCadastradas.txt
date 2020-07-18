@@ -1,1 +1,0 @@
-a,a,000-1 - Banco de Dados I,000-3 - Banco de Dados I,000-4 - Analise e Projeto de Software,002 - Banco de Dados I,003 - Compiladores,006 - Construcao de Software

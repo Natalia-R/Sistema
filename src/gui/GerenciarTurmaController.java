@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.Main;
-import entites.Horario;
 import entites.Turma;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;

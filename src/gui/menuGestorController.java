@@ -68,7 +68,7 @@ public class menuGestorController implements Initializable{
 	
 	@FXML
 	public void onbuttonTabPreferencias() {
-		 //main.mudarTela("/gui/RealizarAlocacoesView.fxml");
+		main.mudarTela("/gui/GerenciarPreferenciasView.fxml");
 	}
 	@FXML
 	public void onbuttonTabEncerar() {

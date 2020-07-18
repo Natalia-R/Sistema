@@ -59,6 +59,7 @@ public class GerenciarPreferenciasController implements Initializable {
 	
 	private static Main main = new Main();
 	
+
 	private static PreferenciaTable linha;
 	
 	public static PreferenciaTable getLinha() {
@@ -69,11 +70,16 @@ public class GerenciarPreferenciasController implements Initializable {
 	public void onbuttonCadastroPreferencias() {
 		 main.mudarTela("/gui/CadastrodePreferenciasView.fxml");
 	}	
+
 	@FXML
 	public void onbuttonMenuPrincipal() {
-		 main.mudarTela("/gui/MenuDoProfessorView.fxml");
+		if (LoginViewController.getUsuario().equals("adm")) {
+			main.mudarTela("/gui/MenuGestorView.fxml");
+		} else {
+			main.mudarTela("/gui/MenuDoProfessorView.fxml");
+		}
 	}
-	
+
 	@FXML
 	public void adicionarTable() {
 	 try {

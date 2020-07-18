@@ -49,6 +49,7 @@ public class LoginViewController implements Initializable{
 				String usuario1 = textUsuario.getText();
 				String senha = textSenha.getText();
 				if (usuario1.equals("adm") && senha.equals("159")) {
+					usuario = textUsuario.getText();
 					main.mudarTela("/gui/MenuGestorView.fxml");
 				}
 				if (UsuarioServices.validarLogin(usuario1, senha)) {
