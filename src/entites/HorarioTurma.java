@@ -10,6 +10,17 @@ public class HorarioTurma {
 	private String codigoTurma;
 
 	private String nomeDia;
+	
+	private String aula;
+	
+	public HorarioTurma() {}
+	
+	
+	public HorarioTurma(String codigoTurma, String nomeDia, String aula) {
+		this.codigoTurma = codigoTurma;
+		this.nomeDia = nomeDia;
+		this.aula = aula;
+	}
 
 	public int getId() {
 		return id;
@@ -53,6 +64,10 @@ public class HorarioTurma {
 		this.nomeDia = nomeDia;
 	}
 
+	public String getAula() {
+		return aula;
+	}
+	
 	@Override
 	public int hashCode() {
 		int hash = 3;
@@ -74,4 +89,7 @@ public class HorarioTurma {
 		}
 		return true;
 	}
+
+
+	
 }

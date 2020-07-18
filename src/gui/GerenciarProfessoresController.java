@@ -14,9 +14,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import services.ProfessorServices;
 
@@ -26,6 +28,15 @@ public class GerenciarProfessoresController implements Initializable {
 	
 	@FXML
 	private Button buttonAdicionarProfessor;
+	
+	@FXML
+	private Button buttonPesquisar;
+	
+	@FXML
+	private TextField  textFieldPesquisar;
+	
+	@FXML
+	private Label  labelErro;
 	
 	@FXML
 	private TableView<Professor> tableViewProfessores;
@@ -54,12 +65,21 @@ public class GerenciarProfessoresController implements Initializable {
 	@FXML
 	private TableColumn<Professor, Professor> columnAcoes;
 	
+	@FXML
+	private TableColumn<Professor, Professor> columnAcoes2;
+	
 	
 	private static Main main = new Main();
 	
 	private ProfessorServices professorServices = new ProfessorServices();
 	
 	private ObservableList<Professor> obsList;
+	
+    private static Professor linha;
+	
+	public static Professor getLinha() {
+		return linha;
+	}
 	
 	@FXML
 	public void onbuttonButtonMenu() {
@@ -76,7 +96,7 @@ public class GerenciarProfessoresController implements Initializable {
 		columnAcoes.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
 		columnAcoes.setCellFactory(param -> new TableCell<Professor, Professor>() {
 			private final Button button = new Button("x Excluir");
-
+		
 			@Override
 			protected void updateItem(Professor obj, boolean empty) {
 				super.updateItem(obj, empty);
@@ -85,6 +105,7 @@ public class GerenciarProfessoresController implements Initializable {
 					return;
 				}
 				setGraphic(button);
+		
 				button.setOnAction(event -> {Alert dialogoExe = new Alert(Alert.AlertType.CONFIRMATION);
 	            ButtonType btnSim = new ButtonType("Sim");
 	            ButtonType btnNao = new ButtonType("Não");
@@ -101,9 +122,49 @@ public class GerenciarProfessoresController implements Initializable {
 	                } 
 	            });});
 			}
+						
 		});
 	}
 	
+	private void initButtonsEditar() {
+		columnAcoes2.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue()));
+		columnAcoes2.setCellFactory(param -> new TableCell<Professor, Professor>() {
+			private final Button button = new Button("Editar");
+
+			@Override
+			protected void updateItem(Professor obj, boolean empty) {
+				super.updateItem(obj, empty);
+				if (obj == null) {
+					setGraphic(null);
+					return;
+				}
+				setGraphic(button);
+				button.setOnAction(event -> {
+					linha = obj;
+					main.mudarTela("/gui/AtualizarProfessoresView.fxml");
+				});
+			}
+		});
+	}
+	
+	@FXML
+	public void onButtonPesquisar() {
+		labelErro.setText("");
+		if(!textFieldPesquisar.getText().equals("")) {
+			String nome = textFieldPesquisar.getText();
+			List<Professor> profBusca = ProfessorServices.buscarProfessorNome(nome);
+			if (profBusca.size() > 0) {
+				obsList = FXCollections.observableArrayList(profBusca);
+				tableViewProfessores.setItems(obsList);
+				initButtonsExcluir();
+				initButtonsEditar();
+			}
+			else {
+				labelErro.setText("Professor não encontrado");
+			}
+		}
+	}
+
 	@FXML
 	public void atualizarTable() {
 		try {
@@ -111,6 +172,7 @@ public class GerenciarProfessoresController implements Initializable {
 		  obsList = FXCollections.observableArrayList(list);
 		  tableViewProfessores.setItems(obsList);
 		  initButtonsExcluir();
+		  initButtonsEditar();
 		}
 		catch(RuntimeException e ){
 			e.getMessage();
@@ -125,11 +187,13 @@ public class GerenciarProfessoresController implements Initializable {
 		  obsList = FXCollections.observableArrayList(list);
 		  tableViewProfessores.setItems(obsList);
 		  initButtonsExcluir();
+		  initButtonsEditar();
 		}
 		catch(RuntimeException e ){
 			e.getMessage();
 		}
 	}
+	
 
 	@FXML
 	private void iniciarColunas() {
@@ -141,6 +205,7 @@ public class GerenciarProfessoresController implements Initializable {
 		columnCargaMinS.setCellValueFactory(new PropertyValueFactory<>("cargaMinS"));
 		columnCargoAdm.setCellValueFactory(new PropertyValueFactory<>("cargoAdm"));
 	}
+	
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {

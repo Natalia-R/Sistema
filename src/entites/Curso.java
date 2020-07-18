@@ -9,6 +9,11 @@ public class Curso {
 	private Collection<Turma> turmas;
 	
 	public Curso() {}
+	
+	public Curso(String codigo, String nome) {
+		this.codigo = codigo;
+		this.nome = nome;
+	}
 
 	public int getId() {
 		return id;

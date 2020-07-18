@@ -1,0 +1,7 @@
+01,Engenharia de Producao
+02,Engenharia de Alimentos
+03,Engenharia Mecanica
+04,Computacao
+05,Informatica
+06,Engenharia Eletrica
+07,Matematica

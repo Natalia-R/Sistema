@@ -26,6 +26,10 @@ public class Alocacao3Controller {
 	
 	private static String ano;
 	
+	public static String getAno() {
+		return ano;
+	}
+	
 	@FXML
 	public void onbuttonButtonMenu() {
 		main.mudarTela("/gui/MenuGestorView.fxml");
@@ -57,9 +61,6 @@ public class Alocacao3Controller {
 	}
 
 	
-	public static String getAno() {
-		return ano;
-	}
 	
 
 }

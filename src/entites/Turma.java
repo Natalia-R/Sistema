@@ -7,15 +7,17 @@ public class Turma {
 	    
 	    private String codigo;
 
-	    private int semestre;
+	    private Integer semestre;
 
 	    private boolean anual;
 
-	    private int cargaTotal;
+	    private Integer cargaTotal;
 
-	    private int cargaSemanal;
+	    private Integer cargaSemanal;
 
 	    private Curso curso;
+	    
+	    private String nomeCurso;
 
 	    private Disciplina disciplina;
 	    
@@ -23,7 +25,21 @@ public class Turma {
 
 	    private Collection<HorarioTurma> ht;
 	    
-	    public Collection<HorarioTurma> getHt() {
+	    public Turma() {}
+	     
+	    
+	    public Turma(String codigo, Integer semestre, boolean anual, Integer cargaTotal, Integer cargaSemanal, String nomeCurso,
+				String nomeDisciplina) {
+			this.codigo = codigo;
+			this.semestre = semestre;
+			this.anual = anual;
+			this.cargaTotal = cargaTotal;
+			this.cargaSemanal = cargaSemanal;
+			this.nomeCurso = nomeCurso;
+			this.nomeDisciplina = nomeDisciplina;
+		}
+
+		public Collection<HorarioTurma> getHt() {
 	        return ht;
 	    }
 
@@ -88,7 +104,15 @@ public class Turma {
 	        this.cargaTotal = cargaTotal;
 	    }
 
-	    
+
+		public String getNomeCurso() {
+			return nomeCurso;
+		}
+
+
+		public void setNomeCurso(String nomeCurso) {
+			this.nomeCurso = nomeCurso;
+		}
 
 	    public int getCargaSemanal() {
 	        return cargaSemanal;
@@ -105,7 +129,7 @@ public class Turma {
 	    public void setNomeDisciplina(String nomeDisciplina) {
 	        this.nomeDisciplina = nomeDisciplina;
 	    }
-     @Override
+       @Override
 	    public int hashCode() {
 	        int hash = 7;
 	        hash = 23 * hash + this.id;
@@ -126,6 +150,7 @@ public class Turma {
 	        }
 	        return true;
 	    }
+
 
 	}
 

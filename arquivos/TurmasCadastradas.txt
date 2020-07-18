@@ -5,4 +5,3 @@
 000-5,1,true,200,10,Informatica,Compiladores,ht
 000-6,1,true,200,10,Engenharia Eletrica,Banco de Dados I,ht
 000-7,1,true,200,10,Matematica,Analise e Projeto de Software,ht
-

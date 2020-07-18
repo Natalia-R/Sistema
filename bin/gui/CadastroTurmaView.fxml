@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CadastroTurmaController">
+   <children>
+      <ToolBar prefHeight="38.0" prefWidth="960.0">
+         <items>
+            <Button fx:id="buttonVoltar" mnemonicParsing="false" onAction="#onButtonVoltar" text="&lt;- Voltar" />
+         </items>
+      </ToolBar>
+      <ToolBar layoutY="58.0" prefHeight="36.0" prefWidth="960.0">
+         <items>
+            <AnchorPane prefHeight="25.0" prefWidth="816.0">
+               <children>
+                  <Label layoutX="395.0" layoutY="2.0" text="CADASTRO DE TURMA">
+                     <font>
+                        <Font name="Times New Roman Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <Label layoutX="303.0" layoutY="139.0" prefHeight="20.0" prefWidth="71.0" text="Codigo:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Label>
+      <TextField fx:id="textCodigo" layoutX="413.0" layoutY="139.0" prefHeight="26.0" prefWidth="241.0" />
+      <Label layoutX="303.0" layoutY="176.0" prefHeight="20.0" prefWidth="88.0" text="Disciplina:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="212.0" prefHeight="20.0" prefWidth="56.0" text="Curso: ">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textCargaTotal" layoutX="413.0" layoutY="249.0" prefHeight="26.0" prefWidth="241.0" text="0" />
+      <Label layoutX="303.0" layoutY="252.0" prefHeight="20.0" prefWidth="88.0" text="CargaTotal:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="290.0" prefHeight="20.0" prefWidth="56.0" text="Anual:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="443.0" layoutY="289.0" mnemonicParsing="false" selected="true" text="Sim">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="anual" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="534.0" layoutY="289.0" mnemonicParsing="false" text="Não" toggleGroup="$anual">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="buttonCadastrar" layoutX="461.0" layoutY="386.0" mnemonicParsing="false" onAction="#onButtonCadastrar" prefHeight="26.0" prefWidth="88.0" text="Cadastrar">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="331.0" layoutY="413.0" prefHeight="36.0" prefWidth="326.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="327.0" prefHeight="20.0" prefWidth="82.0" text="Semestre:">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="443.0" layoutY="326.0" mnemonicParsing="false" selected="true" text="1">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="cargoSemestre" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="534.0" layoutY="326.0" mnemonicParsing="false" text="2" toggleGroup="$cargoSemestre">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+      </RadioButton>
+      <MenuButton fx:id="menuButtonDisciplina" layoutX="412.0" layoutY="173.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="242.0" />
+      <MenuButton fx:id="menuButtonCurso" layoutX="413.0" layoutY="209.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="242.0" />
+      <Label fx:id="labelErro" layoutX="410.0" layoutY="361.0" prefHeight="18.0" prefWidth="284.0" />
+   </children>
+</AnchorPane>

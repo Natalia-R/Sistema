@@ -1,1 +1,1 @@
-a,a,000-1 - Banco de Dados I,000-2 - Compiladores,000-3 - Banco de Dados I,001 - Matematica Discreta I,002 - Banco de Dados I,003 - Compiladores
+a,a,000-1 - Banco de Dados I,000-3 - Banco de Dados I,000-4 - Analise e Projeto de Software,002 - Banco de Dados I,003 - Compiladores,006 - Construcao de Software

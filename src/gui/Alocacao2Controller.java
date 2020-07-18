@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
@@ -26,6 +27,9 @@ import table.TurmaTable;
 public class Alocacao2Controller implements Initializable {
 	@FXML
 	private Button buttonVoltarMenu;
+	
+	@FXML
+	private Label labelErro;
 
 	@FXML
 	private MenuButton menuButton;
@@ -65,6 +69,13 @@ public class Alocacao2Controller implements Initializable {
 	
 	private String valorItem;
 	
+	private static  ArrayList<TurmaTable> listTurma = new ArrayList<>();
+	
+		
+	public static ArrayList<TurmaTable> getListTurma() {
+		return listTurma;
+	}
+
 	public static TurmaServices getTurmaServices() {
 		return turmaServices;
 	}
@@ -85,7 +96,15 @@ public class Alocacao2Controller implements Initializable {
 	
 	@FXML
 	public void onbuttonButtonPasso3() {
-		main.mudarTela("/gui/Alocacoes3View.fxml");
+		labelErro.setText("");
+		if(turmaServices.getListTable().size()> 0) {
+	        listTurma = (ArrayList<TurmaTable>) turmaServices.getListTable();
+			main.mudarTela("/gui/Alocacoes3View.fxml");
+		}
+		else {
+			labelErro.setText("Voce deve adicionar pelo menos uma turma");
+		}
+		
 	}
 	
 	@FXML

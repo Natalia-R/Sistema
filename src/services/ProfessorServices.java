@@ -112,7 +112,7 @@ public class ProfessorServices {
 	}
 	
 	public ProfessorTable dadosProfessor(String item) {	
-		String registro[] = item.split(" ");
+		String registro[] = item.split("-");
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("arquivos/ProfessoresCadastrados.txt").getCanonicalPath()))) {
 			String line = br.readLine();
 			while (line != null) {
@@ -150,7 +150,6 @@ public class ProfessorServices {
 	public void removerProfessorCadastradoLista(Professor prof) {
 		listTableProfessoresCadastrados.remove(prof);
 		removerProfessorCadastrado(listTableProfessoresCadastrados);
-		
 	}
 	
 	public static String buscarProfessorLogin(String login) {
@@ -187,39 +186,42 @@ public class ProfessorServices {
 		return list;
 	}
 
-
 	public boolean cadastrarProfessor(String registro, String nome, String cargaMaxA, String cargaMinA, boolean cargoAdm) {
 		Locale.setDefault(new Locale("pt", "BR"));
-		if (!professorCadastrado(registro)) {
+		//if (!professorCadastrado(registro)) {
 			try (BufferedWriter bw = new BufferedWriter(
 					new FileWriter(new File("arquivos/ProfessoresCadastrados.txt").getCanonicalPath(), true))) {
 				Integer cargaMinS = Integer.parseInt(cargaMinA) / 32;
 				Integer cargaMaxS = Integer.parseInt(cargaMaxA) / 32;
+				if(cargaMinS < 1) cargaMinS =1;
+				if(cargaMaxS < 1) cargaMaxS =1;
+				
 				if (cargoAdm) {
 					String novoCadastro = registro + "," + nome + "," + cargaMinA + "," + cargaMaxA + "," + cargaMinS
 							+ "," + cargaMaxS + "," + "true";
+					bw.newLine();
 					bw.write(novoCadastro);
 					this.mensagem = "Usuário cadastrado com sucesso";
 					return true;
 				} else {
 					String novoCadastro = registro + "," + nome + "," + cargaMinA + "," + cargaMaxA + "," + cargaMinS
 							+ "," + cargaMaxS + "," + "false";
-					bw.write(novoCadastro);
 					bw.newLine();
+					bw.write(novoCadastro);
 					this.mensagem = "Usuário cadastrado com sucesso";
 					return true;
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		} else {
-			this.mensagem = "Professor já cadastrado";
-			return false;
-		}
+		//} else {
+		//	this.mensagem = "Professor já cadastrado";
+		//	return false;
+	//	}
 		return false;
 	}
 
-	private boolean professorCadastrado(String registro) {
+	public boolean professorCadastrado(String registro) {
 		try (BufferedReader br = new BufferedReader(new FileReader(new File("arquivos/ProfessoresCadastrados.txt").getCanonicalPath()))) {
 			String line = br.readLine();
 			while (line != null) {
@@ -233,6 +235,33 @@ public class ProfessorServices {
 			System.out.println("Error: " + e.getMessage());
 		}
 		return false;
+	}
+	
+	public static List<Professor> buscarProfessorNome(String nome) {
+		List<Professor> buscaProf = new ArrayList<>();
+		try (BufferedReader br = new BufferedReader(new FileReader(new File("arquivos/ProfessoresCadastrados.txt").getCanonicalPath()))) {
+			String line = br.readLine();
+			while (line != null) {
+				String dados[] = line.split(",");
+				if (nome.equals(dados[1])) {
+					if (dados[6].contentEquals("true")) {
+						Professor prof = new Professor(dados[0], dados[1], Integer.parseInt(dados[5]),Integer.parseInt(dados[4]), 
+								Integer.parseInt(dados[2]), Integer.parseInt(dados[3]),"ADM");
+						buscaProf.add(prof);
+					}
+					else {
+						Professor prof = new Professor(dados[0], dados[1], Integer.parseInt(dados[5]),Integer.parseInt(dados[4]), 
+								Integer.parseInt(dados[2]), Integer.parseInt(dados[3])," ");
+						buscaProf.add(prof);
+					}
+				
+				}
+				line = br.readLine();
+			}
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+		return buscaProf;
 	}
 
 	public void removerProfessorCadastrado(List<Professor> list) {
@@ -260,5 +289,40 @@ public class ProfessorServices {
 		}
 	}
 	
-  
+	// reescreve o arquivo retirando o professor q sera atualizado
+	public void removerAtualizarProfessor(Professor obj) {
+		Locale.setDefault(new Locale("pt", "BR"));
+		adicionarProfessoresCadastrados();
+		List<Professor> list = listTableProfessoresCadastrados;
+		try (BufferedWriter bw = new BufferedWriter(
+				new FileWriter(new File("arquivos/ProfessoresCadastrados.txt").getCanonicalPath()))) {
+			for (Professor elemento : list) {
+				if (elemento.getRegistro().equals(obj.getRegistro())
+						&& elemento.getNome().equals(obj.getNome())) {
+						
+				} else {
+					if(elemento.getCargoAdm() == "ADM") {
+						String Cadastro = elemento.getRegistro() + "," + elemento.getNome() + ","
+								+ elemento.getCargaMaxA() + "," + elemento.getCargaMinA() + ","
+								+ elemento.getCargaMaxS() + "," + elemento.getCargaMinS() + "," + true;
+						bw.write(Cadastro);
+						bw.newLine();
+					}
+					else {
+						String Cadastro = elemento.getRegistro() + "," + elemento.getNome() + ","
+								+ elemento.getCargaMaxA() + "," + elemento.getCargaMinA() + ","
+								+ elemento.getCargaMaxS() + "," + elemento.getCargaMinS() + "," + false;
+						bw.write(Cadastro);
+						bw.newLine();
+					}
+				}
+			}
+		}
+
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 }

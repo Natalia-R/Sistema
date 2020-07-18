@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.GerenciamentoCursosController">
+   <children>
+      <ToolBar prefHeight="38.0" prefWidth="960.0">
+         <items>
+            <Button fx:id="buttonAdicionarCurso" mnemonicParsing="false" onAction="#onbuttonButtonAdicionarCurso" prefHeight="26.0" prefWidth="154.0" text="+ Cadastrar curso" />
+            <Button fx:id="buttonVoltarMenu" mnemonicParsing="false" onAction="#onbuttonButtonMenu" prefHeight="26.0" prefWidth="115.0" text="Menu Principal" />
+         </items>
+      </ToolBar>
+      <TextField fx:id="textFieldPesquisar" layoutX="332.0" layoutY="119.0" prefHeight="26.0" prefWidth="218.0" promptText="Digite uma disciplina" />
+      <Button fx:id="buttonPesquisar" layoutX="555.0" layoutY="119.0" mnemonicParsing="false" onAction="#onButtonPesquisar" prefHeight="26.0" prefWidth="78.0" text="Pesquisar" />
+      <Label layoutX="342.0" layoutY="88.0" prefHeight="20.0" prefWidth="310.0" text=" GERENCIAMENTO DE CURSOS">
+         <font>
+            <Font name="Times New Roman Bold" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableViewCursos" layoutX="70.0" layoutY="202.0" prefHeight="366.0" prefWidth="820.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0">
+        <columns>
+          <TableColumn fx:id="columnCodigo" prefWidth="235.99996185302734" text="CODIGO" />
+            <TableColumn fx:id="columnCurso" prefWidth="338.3999938964844" text="CURSO" />
+            <TableColumn fx:id="columnAcoes" minWidth="0.0" prefWidth="129.59991455078125" text="AÇÕES" />
+            <TableColumn fx:id="columnAcoes2" minWidth="4.0" prefWidth="115.20001220703125" />
+        </columns>
+      </TableView>
+      <Label fx:id="labelErro" layoutX="329.0" layoutY="160.0" prefHeight="18.0" prefWidth="310.0">
+         <font>
+            <Font name="Times New Roman" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

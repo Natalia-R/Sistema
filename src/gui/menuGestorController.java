@@ -26,13 +26,21 @@ public class menuGestorController implements Initializable{
 	
 	@FXML
 	public void onbuttonTabRealizarAlocacoes() {
+		 limparDados();
 		 main.mudarTela("/gui/RealizarAlocacoesView.fxml");
 	}
+	private void limparDados() {
+		RealizarAlocacoesController.getListProfessores().clear();
+		Alocacao2Controller.getListTurma().clear();
+		Alocacoes4Controller.getListAlocacaoFixos().clear();
+	}
+	
 	
 	@FXML
 	public void onbuttonTabAlocacoesRealizadas() {
 		 main.mudarTela("/gui/AlocacoesRealizadasView.fxml");
 	}
+		
 	@FXML
 	public void onbuttonTabProfessores() {
 		 main.mudarTela("/gui/GerenciarProfessoresView.fxml");
@@ -40,22 +48,22 @@ public class menuGestorController implements Initializable{
 	
 	@FXML
 	public void onbuttonTabDisciplina() {
-		 //main.mudarTela("/gui/RealizarAlocacoesView.fxml");
+		 main.mudarTela("/gui/GerenciarDisciplinasView.fxml");
 	}
 	
 	@FXML
 	public void onbuttonTabCurso() {
-		 //main.mudarTela("/gui/RealizarAlocacoesView.fxml");
+		 main.mudarTela("/gui/GerenciarCursosView.fxml");
 	}
 	
 	@FXML
 	public void onbuttonTabHorarios() {
-		 //main.mudarTela("/gui/RealizarAlocacoesView.fxml");
+		 main.mudarTela("/gui/GerenciarHorariosView.fxml");
 	}
 	
 	@FXML
 	public void onbuttonTabTurmas() {
-		 //main.mudarTela("/gui/RealizarAlocacoesView.fxml");
+		 main.mudarTela("/gui/GerenciarTurmasView.fxml");
 	}
 	
 	@FXML
@@ -68,9 +76,8 @@ public class menuGestorController implements Initializable{
 	}
 	
 	
-	
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL url, ResourceBundle rb) {
 	}
 	
 	

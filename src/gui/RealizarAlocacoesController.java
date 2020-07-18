@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
@@ -26,6 +27,9 @@ import table.ProfessorTable;
 public class RealizarAlocacoesController implements Initializable {
 	@FXML
 	private Button buttonVoltarMenu;
+	
+	@FXML
+	private Label labelErro;
 
 	@FXML
 	private MenuButton menuButton;
@@ -67,7 +71,14 @@ public class RealizarAlocacoesController implements Initializable {
 	private String valorItem;
 
 	private static ProfessorServices professorServices = new ProfessorServices();
+	
+	private static List<ProfessorTable> listProfessores = new ArrayList<>();
 
+
+	public static List<ProfessorTable> getListProfessores() {
+		return listProfessores;
+	}
+	
 	public static ProfessorServices getProfessorServices() {
 		return professorServices;
 	}
@@ -79,7 +90,14 @@ public class RealizarAlocacoesController implements Initializable {
 
 	@FXML
 	public void onbuttonButtonPasso2() {
-		main.mudarTela("/gui/Alocacoes2View.fxml");
+		labelErro.setText("");
+		if(professorServices.getListTable().size() > 0) {
+			listProfessores = professorServices.getListTable();
+			main.mudarTela("/gui/Alocacoes2View.fxml");
+		}
+		else {
+			labelErro.setText("Voce deve adicionar pelo menos 1 professor para continuar");
+		}		
 	}
 
 	@FXML

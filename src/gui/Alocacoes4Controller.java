@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
@@ -51,6 +52,9 @@ public class Alocacoes4Controller implements Initializable{
 	private Button buttonLimparLista;
 	
 	@FXML
+	private Label labelErro;
+	
+	@FXML
 	private TableView<AlocacaoTable> tableViewFixos;
 	
 	@FXML
@@ -84,8 +88,19 @@ public class Alocacoes4Controller implements Initializable{
 	private ProfessorServices  professorServices= new ProfessorServices();
 	
 	private static AlocacaoServices  alocacaoServices= new AlocacaoServices();
-	 
 	
+	private static List<AlocacaoTable> listAlocacaoFixos = new ArrayList<>();
+
+	
+	public static List<AlocacaoTable> getListAlocacaoFixos() {
+		return listAlocacaoFixos;
+	}
+
+	
+	public void setListAlocacao(List<AlocacaoTable> listAlocacao) {
+		listAlocacaoFixos = listAlocacao;
+	}
+
 	public static AlocacaoServices getAlocacaoServicesFixos() {
 		return alocacaoServices;
 	}
@@ -106,7 +121,13 @@ public class Alocacoes4Controller implements Initializable{
 	
 	@FXML
 	public void onbuttonButtonPasso5() {
-        main.mudarTela("/gui/Alocacoes5View.fxml");
+		if(alocacaoServices.getListAlocacao().size() > 0) {
+			listAlocacaoFixos = alocacaoServices.getListAlocacao();
+			main.mudarTela("/gui/Alocacoes5View.fxml");
+		}
+		else {
+			main.mudarTela("/gui/Alocacoes5View.fxml");
+		}
 	}
 	
 	@FXML
@@ -261,7 +282,6 @@ public class Alocacoes4Controller implements Initializable{
 		iniciarColunas();
 		valorItemProfessor = "";
 		valorItemTurma = "";
-		
 	}
 
 }

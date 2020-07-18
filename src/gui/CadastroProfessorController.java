@@ -29,7 +29,7 @@ public class CadastroProfessorController {
    private TextField textCargaMaxA;
    
    @FXML
-	private ToggleGroup cargoAdm;
+   private ToggleGroup cargoAdm;
    
    @FXML 
    private Label labelErro;
